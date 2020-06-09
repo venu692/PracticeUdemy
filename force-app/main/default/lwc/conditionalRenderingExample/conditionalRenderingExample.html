@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Conditonal Rendering with Iteration Example" icon-name="custom:custom63">
+        <lightning-input type="checkbox" label="displayDivElement" onchange={showDivHandler}></lightning-input>
+        <template if:true={displayDiv}>
+                <div class="RenderExampleTrue">    
+                    <h>True</h>
+                </div>
+        </template>
+        <template if:false={displayDiv}>
+            <div class="RenderExampleFalse">    
+                <h>False</h>
+            </div>
+    </template>
+
+        <template for:each={cityList} for:item="city">
+            <p key={city}> {city}</p>
+        </template>
+        <div>Fetching the value based on index</div>
+        <template iterator:it={cityList}>
+            <p key={it.value}>{it.value}</p>
+        </template>
+    </lightning-card>
+
+</template>

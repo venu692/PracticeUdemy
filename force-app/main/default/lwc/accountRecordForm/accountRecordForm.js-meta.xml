@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>48.0</apiVersion>
+    <isExposed>true</isExposed>
+    <description>componet to edit the Record Page</description>
+    <masterLabel>Generic Record Handler</masterLabel> <!-- MasterLabel will be display -->
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__HomePage">
+            <!--User will have acess to choose from list which source to be displayed in the home page-->
+            <property name="objectApiName" type="String" datasource="Account,Contact,Opportunity" default="Account"></property>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

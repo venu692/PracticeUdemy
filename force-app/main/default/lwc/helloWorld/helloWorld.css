@@ -1,0 +1,10 @@
+.greeting{
+    color: red;
+    background: grey;
+}
+
+:host{
+
+border-top: 30px;
+
+}
